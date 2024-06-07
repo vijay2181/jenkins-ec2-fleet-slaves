@@ -165,6 +165,7 @@ aws ec2 create-launch-template \
     --region us-west-2 --profile vijay
 
 
+RESPONSE:
 {
     "LaunchTemplate": {
         "LaunchTemplateId": "lt-02e17929b5868f792",
@@ -222,6 +223,8 @@ spot
 
 aws ec2 create-fleet --cli-input-json file://config.json --profile vijay --region us-west-2
 
+
+RESPONSE:
 {
     "FleetId": "fleet-abbfb319-5c69-43e6-aa95-9c46a8e04b53"
 }
@@ -235,6 +238,9 @@ aws ec2 describe-fleets --fleet-id fleet-abbfb319-5c69-43e6-aa95-9c46a8e04b53 --
 aws ec2 describe-fleets --profile vijay    --- lists all fleets
 
 aws ec2 delete-fleets --fleet-id fleet-abbfb319-5c69-43e6-aa95-9c46a8e04b53 --terminate-instances --profile vijay --region us-west-2
+
+start_time=$(date -u -d '-1 hour' +"%Y-%m-%dT%H:%M:%S")
+aws ec2 describe-fleet-history --fleet-id fleet-ee3470f5-af9e-45d4-86bf-15a655d38a33 --start-time $start_time --profile vijay
 
 ```
 
@@ -288,7 +294,17 @@ tail -f jenkins.log
 
 
 
+```
+in configure clouds, if you provide name 
+Name: primary-slave 
 
+- this name will be tagged to ec2-instnace by the plugin dynamically
+
+ec2-fleet-plugin:cloud-name	 primary-slave
+
+```
+
+![image](https://github.com/vijay2181/jenkins-ec2-fleet-slaves/assets/66196388/e6fdc7ed-8c6a-485e-a64d-926c597dd655)
 
 
 
