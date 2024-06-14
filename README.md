@@ -258,6 +258,9 @@ tail -f jenkins.log
 
 - configure cloud
 
+![image](https://github.com/vijay2181/jenkins-ec2-fleet-slaves/assets/66196388/2ae956d2-3548-4571-8a34-04a1d75374f4)
+
+
 ![image](https://github.com/vijay2181/jenkins-ec2-fleet-slaves/assets/66196388/b7473fad-561b-45af-9092-7035c0c3d6ff)
 
 - here i have given ec2 full access to jenkins master, so no need aws credentials
